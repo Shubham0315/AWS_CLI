@@ -71,3 +71,4 @@ Practical Demo
 
 - After creation, we can see output in JSON format as selected earlier while configuring.
 
+- Even if we miss something while passing command, it will throw error mentioning what was missed.
