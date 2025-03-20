@@ -30,3 +30,43 @@
   
 -------------------------------------------------------------------------------------
 
+Practical Demo
+-
+- Download AWS CLI from AWS CLI documentation.
+- Pre-requisite is to install python on our machine
+- To check aws cli :- **aws --version**
+
+- To configure AWS CLI on our machine to talk to AWS account :- aws configure
+  - It asks for "Access Key ID", "Secret Access Key", "AWS region", "Output Format". Provide to configure the account
+- For any API to access, there are access keys, API tokens. In AWS we use access keys as they're similar to our username and password for UI login.
+
+- To get access keys :- Login using IAM user Account - Security credentials - Access keys
+  - To create access key - Create access key - Get details of access and secret key
+
+![image](https://github.com/user-attachments/assets/edeef554-7188-47a4-859c-14db7e7b0360)
+
+- After getting the keys only configure aws account using CLI
+
+- We can check the configuration is done using running any command :- **aws s3 ls**
+  - This command understands AWS CLI wants to talk to S3 service in account and invoke "ls" command.
+  - AWS CLI will translate the command to API call which AWS understands. Then making API call, we get output
+ 
+- To create EC2, we need to pass parameters like name of EC2, distribution AMI(OS), instance type, key-value pair. This info has to be passed through CLI as well
+  - Command :- aws ec2 run-instances \
+    --image-id ami-0abcdef1234567890 \
+    --instance-type t2.micro \
+    --key-name MyKeyPair \
+    --security-group-ids sg-0123456789abcdef0 \
+    --subnet-id subnet-0123456789abcdef0 \
+    --count 1 \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyEC2Instance}]'
+
+--image-id → AMI ID (e.g., Amazon Linux 2, Ubuntu, etc.)
+--instance-type → Instance type (e.g., t2.micro)
+--key-name → Key pair name for SSH access
+--security-group-ids → Security group for inbound/outbound rules
+--subnet-id → Subnet ID for VPC placement
+--count → Number of instances to launch
+--tag-specifications → Add tags for identification
+
+- After creation, we can see output in JSON format as selected earlier while configuring.
