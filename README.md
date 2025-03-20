@@ -72,3 +72,8 @@ Practical Demo
 - After creation, we can see output in JSON format as selected earlier while configuring.
 
 - Even if we miss something while passing command, it will throw error mentioning what was missed.
+
+
+** CLI is used for quick references. But when we want to create complicated stack/infrastructure resources, we should not use CLI, go for terraform or CFT
+But for quick references, writing terraform scripts or CFT is not recommended as tghey're written in yml.
+-
