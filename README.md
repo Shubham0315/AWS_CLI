@@ -1,4 +1,3 @@
-# AWS_CLI
 
 - All the resources are created through AWS UI using root account/IAM.
 - The primary work of DevOps engineers is to do infrastructure management/automation. But this UI is not automation friendly as through UI for any task we end up creating resources consuming more time. Using UI is good until we get less requests for rescource creation. But to act on many requests at a time, automation is needed.
@@ -7,3 +6,27 @@
   - Using API we programmatically reach that app passing credentials, tokens or any other required things.  These programs can be scripts, python code, etc.
   - Tools to automate AWS infrastructure :- CLI, terraform, AWS CFT, AWS CDK 
   - Here apart from CLI, rest tools are IaC tools
+ 
+# AWS Commad Line Interface
+
+- AWS CLI is python utility/program written by AWS engineers using which we can pass some arguments to it (credentials, variables) and create resources on AWS
+- For any app, there are 2 ways to connect :- UI and API (Programmatical)
+  - e.g: To create S3 bucket using api.aws.com/s3/create
+  - AWS writes API to create S3 bucket. Write specific URL in program passing required parameters like S3 name, versioning for S3 then call API and pass arguments to python code and S3 gets created. So we reach apps not thro UI but thro program. Program can be of our choice. Application owner will tell us if we want to create resources, reach out to API we created and use HTTP method declared and pass parameters to get resource in JSON or any format.
+ 
+- But as DevOps engineer, we dont tend to write programs, so CLI, CFT, Terraform create abstraction layer. So using abstraction layer, no need of writing all these things.
+- If CLI created python app for us, we have to install it and call using AWS along with parameters(./aws/s3) along with name, versioning. Then AWS CLI will convert to API call and send to AWS
+- So as DevOps engineers, we dont need to know about API, calling API, writing program. Instead we need to know how to install CLI  and use it by passing parameters. Using it we can automate any resources with AWS.. This writing parameters is like writing text.
+
+- AWS CLIS is an interface between user and API
+- To invoke AWS CLI :- **aws $parameters** and submit
+  - This will translate request into an API call AWS understand and AWS creates resources for us
+  - AWS CLI is very quick entering commands, in CFT and terraform we need to write yaml files
+ 
+- CLI is preferred if we need quick output of anything.
+  - Suppose we need to get list fo S3 buckets :- **aws s3 ls**
+  - Whereas in CFT and terraform we need to write yml files and execute them
+  - But if we need to create large infrastructure or stack of resources on AWS,then CFT and terraform is used as they follow API as a code which helps in reviewing code and other things
+  
+-------------------------------------------------------------------------------------
+
