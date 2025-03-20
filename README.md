@@ -70,3 +70,4 @@ Practical Demo
 --tag-specifications → Add tags for identification
 
 - After creation, we can see output in JSON format as selected earlier while configuring.
+
